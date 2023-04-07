@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Clock</title>
+</head>
+<body>
+    <div class="clock">
+        <div class="hour digit">01</div>
+        <div class="colon">:</div>
+        <div class="mins digit">00</div>
+        <div class="colon">:</div>
+        <div class="secs digit">00</div>
+    </div>
+
+    <script>
+        setInterval(()=>{
+            const now = new Date();
+
+            let hours = document.querySelector(".hour");
+            let mins = document.querySelector(".mins");
+            let secs = document.querySelector(".secs");
+
+            hourDigit = now.getHours();
+            minDigit = now.getMinutes();
+            secDigit = now.getSeconds();
+
+            if(hourDigit < 10){
+                hours.innerHTML = "0" + hourDigit;
+            }
+            else {
+                hours.innerHTML = hourDigit;
+            }
+
+            if(minDigit < 10) {
+                mins.innerHTML = "0" + minDigit;
+            }
+            else {
+                mins.innerHTML = minDigit;
+            }
+
+            if(secDigit < 10) {
+                secs.innerHTML = "0" + secDigit;
+            }
+
+            else {
+                secs.innerHTML = secDigit;
+            }
+
+         },1000);
+    </script>
+</body>
+</html>
